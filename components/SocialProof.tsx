@@ -89,7 +89,7 @@ export default function SocialProof() {
               transition={{ duration: 0.5 }}
             >
               <h3 className="font-playfair text-4xl md:text-5xl font-bold text-champagne mb-2">
-                10k+
+                2k+
               </h3>
               <p className="text-gray-600 font-medium uppercase tracking-wider text-xs">
                 Thiệp đã tạo

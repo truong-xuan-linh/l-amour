@@ -3,7 +3,11 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+
+const scrollTo = (href: string) => {
+  const el = document.querySelector(href);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function Hero() {
   return (
@@ -58,17 +62,23 @@ export default function Hero() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
           >
-            <Link href="#contact" className="group relative px-8 py-4 bg-champagne text-white rounded-full font-medium text-lg overflow-hidden shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-2">
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="group relative px-8 py-4 bg-champagne text-white rounded-full font-medium text-lg overflow-hidden shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center gap-2"
+            >
               <span className="relative z-10">Nhận tư vấn thiết kế</span>
               <ArrowRight
                 className="relative z-10 group-hover:translate-x-1 transition-transform"
                 size={20}
               />
               <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-            </Link>
-            <Link href="#templates" className="px-8 py-4 bg-transparent border border-sage/30 text-sage hover:bg-sage/5 rounded-full font-medium text-lg transition-all w-full sm:w-auto text-center">
+            </button>
+            <button
+              onClick={() => scrollTo("#templates")}
+              className="px-8 py-4 bg-transparent border border-sage/30 text-sage hover:bg-sage/5 rounded-full font-medium text-lg transition-all w-full sm:w-auto text-center"
+            >
               Xem mẫu thiệp
-            </Link>
+            </button>
           </motion.div>
         </motion.div>
 

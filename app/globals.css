@@ -8,6 +8,10 @@
   --font-montserrat: var(--font-montserrat);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-cream);
   color: #333333;

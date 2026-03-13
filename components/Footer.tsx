@@ -145,17 +145,17 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin size={20} className="text-champagne shrink-0 mt-1" />
                 <span className="text-gray-400 font-light">
-                  123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh
+                  Đường Nguyễn Lâm, Phường Gia Định, TP. Hồ Chí Minh
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={20} className="text-champagne shrink-0" />
-                <span className="text-gray-400 font-light">0123 456 789</span>
+                <span className="text-gray-400 font-light">0354693885</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={20} className="text-champagne shrink-0" />
                 <span className="text-gray-400 font-light">
-                  hello@lamourlink.vn
+                  lamourlink@gmail.com
                 </span>
               </li>
             </ul>

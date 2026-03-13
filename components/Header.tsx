@@ -3,11 +3,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollTo = (href: string) => {
+    setIsMobileMenuOpen(false);
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,26 +43,29 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <Link href="#" className="flex items-center gap-2">
+        <button onClick={() => scrollTo("#")} className="flex items-center gap-2">
           <span className="font-playfair text-2xl font-bold tracking-wider text-champagne">
             L&apos;Amour Link
           </span>
-        </Link>
+        </button>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <button
               key={link.name}
-              href={link.href}
+              onClick={() => scrollTo(link.href)}
               className="text-sm font-medium text-gray-700 hover:text-champagne transition-colors uppercase tracking-widest"
             >
               {link.name}
-            </Link>
+            </button>
           ))}
-          <Link href="#contact" className="bg-champagne text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-champagne/90 transition-colors shadow-sm">
+          <button
+            onClick={() => scrollTo("#contact")}
+            className="bg-champagne text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-champagne/90 transition-colors shadow-sm"
+          >
             Nhận tư vấn ngay
-          </Link>
+          </button>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -75,18 +87,20 @@ export default function Header() {
             className="absolute top-full left-0 right-0 bg-cream/95 backdrop-blur-md shadow-lg py-6 px-4 md:hidden flex flex-col gap-6 items-center"
           >
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => scrollTo(link.href)}
                 className="text-lg font-medium text-gray-800 hover:text-champagne transition-colors uppercase tracking-widest"
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
-            <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-champagne text-white px-8 py-3 rounded-full text-base font-medium hover:bg-champagne/90 transition-colors shadow-sm w-full max-w-xs text-center">
+            <button
+              onClick={() => scrollTo("#contact")}
+              className="bg-champagne text-white px-8 py-3 rounded-full text-base font-medium hover:bg-champagne/90 transition-colors shadow-sm w-full max-w-xs text-center"
+            >
               Nhận tư vấn ngay
-            </Link>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

@@ -9,6 +9,25 @@ import ContactForm from "@/components/ContactForm";
 import FloatingButtons from "@/components/FloatingButtons";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "L'Amour Link",
+    "serviceType": "Tạo website thiệp cưới online",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "L'Amour Link",
+      "telephone": "0354693885",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Đường Nguyễn Lâm, Phường Gia Định",
+        "addressLocality": "TP. Hồ Chí Minh",
+        "addressCountry": "VN"
+      }
+    },
+    "url": "https://www.lamour.com.vn"
+  };
+
   return (
     <main className="min-h-screen flex flex-col">
       <Header />
@@ -20,6 +39,11 @@ export default function Home() {
       <ContactForm />
       <Footer />
       <FloatingButtons />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </main>
   );
 }

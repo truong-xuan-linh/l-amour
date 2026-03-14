@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,11 +44,11 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-        <button onClick={() => scrollTo("#")} className="flex items-center gap-2">
+        <Link href="/" onClick={(e) => { e.preventDefault(); scrollTo("#"); }} className="flex items-center gap-2">
           <span className="font-playfair text-2xl font-bold tracking-wider text-champagne">
             L&apos;Amour Link
           </span>
-        </button>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">

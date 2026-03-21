@@ -34,7 +34,7 @@ const templates = [
     category: "Hiện đại",
     description: "Phong cách Netflix / Điện ảnh — câu chuyện tình yêu được kể như một bộ phim bom tấn.",
     image: "/templates/wedding-cinema-pink.webp",
-    previewUrl: "https://wedding-cinema.vercel.app",
+    previewUrl: "https://wedding-cinema-pink.vercel.app",
   },
   {
     id: 4,

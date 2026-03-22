@@ -20,7 +20,7 @@ const contacts = [
     external: true,
   },
   {
-    href: "tel:0354693885",
+    href: "tel:035",
     label: "Gọi tư vấn",
     bg: "bg-champagne hover:bg-champagne/90",
     icon: <Phone size={22} fill="currentColor" />,

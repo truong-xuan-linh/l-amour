@@ -36,7 +36,7 @@ export default function Home() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "L'Amour Link",
-      "telephone": "0354693885",
+      "telephone": "035",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Đường Nguyễn Lâm, Phường Gia Định",
